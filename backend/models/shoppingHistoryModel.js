@@ -2,8 +2,11 @@ const mongoose = require('mongoose')
 
 const productSchema = new mongoose.Schema({
     productId: { type: mongoose.Schema.Types.ObjectId, ref: 'product', required: true },
+    productName: {type: String},
     quantity: { type: Number, required: true },
-    sellingPrice: { type: Number, required: true }
+    sellingPrice: { type: Number, required: true },
+    licenseKey:  { type: String } // Agrega el campo licenseKey
+
 });
 
 const orderSchema = new mongoose.Schema({

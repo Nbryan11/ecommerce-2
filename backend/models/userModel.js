@@ -1,5 +1,10 @@
 const mongoose = require('mongoose')
 
+const disponibilidadSchema = new mongoose.Schema({
+    inicio: Date,
+    fin: Date
+}, { _id: false });
+
 const userSchema = new mongoose.Schema({
     name : String,
     email : {
@@ -13,7 +18,8 @@ const userSchema = new mongoose.Schema({
     profilePic: String,
     phone: String,
     documentType: String,
-    document: String
+    document: String,
+    disponibilidad: [disponibilidadSchema] // Array de fechas y horas ocupadas
 },{
     timestamps : true
 })
